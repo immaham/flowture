@@ -1,0 +1,10 @@
+# root .gitignore
+node_modules/
+dist/
+.env
+.env.local
+.vscode/
+coverage/
+*.log
+backend/node_modules/
+frontend/node_modules/

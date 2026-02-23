@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: flowture_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: flowture_user
+      POSTGRES_PASSWORD: flowture_password
+      POSTGRES_DB: flowture_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - flowture_postgres_data:/var/lib/postgresql/data
+    networks:
+      - flowture_network
+
+volumes:
+  flowture_postgres_data:
+
+networks:
+  flowture_network:
+    driver: bridge
